@@ -1,14 +1,18 @@
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter'
 
+import { storeToRefs } from 'pinia'
+
 const counter = useCounterStore()
 
+const { count, doubelCount } = storeToRefs(counter)
+
 const increase = () => {
-  counter.count++
+  count.value++
 }
 
 const reset = () => {
-  counter.$reset() //无效
+  counter.$reset()
 }
 </script>
 
@@ -17,8 +21,8 @@ const reset = () => {
     <button @click="increase">increase</button>
     <button @click="reset">reset</button>
 
-    <p>{{ counter.count }}</p>
-    <p>{{ counter.doubleCount }}</p>
+    <p>{{ count }}</p>
+    <p>{{ doubelCount }}</p>
   </div>
 </template>
 

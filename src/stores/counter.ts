@@ -6,7 +6,7 @@ export const useCounterStore = defineStore('counter', {
   },
 
   getters: {
-    doubleCount: (state) => state.count * 2
+    doubelCount: (state) => state.count * 2
   },
   // 也可以定义为
   // state: () => ({ count: 0 })
